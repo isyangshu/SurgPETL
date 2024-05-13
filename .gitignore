@@ -1,0 +1,10 @@
+.history
+pretrain_params
+results
+CholecT50
+CholecT50C
+__pycache__
+model/__pycache__
+downstream_phase/__pycache__
+downstream_triplet/__pycache__
+datasets/__pycache__

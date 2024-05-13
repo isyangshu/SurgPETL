@@ -1,0 +1,30 @@
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
+--nproc_per_node=2 \
+--master_port 12324 \
+downstream_triplet/run_triplet_finetuning_ours_timm_LA.py \
+--batch_size 32 \
+--epochs 30 \
+--save_ckpt_freq 5 \
+--model vit_base_224_aim_timm \
+--pretrained_data wit400m \
+--patch_size 16 \
+--opt adamw \
+--lr 3e-4 \
+--layer_decay 0.1 \
+--weight_decay 5e-2 \
+--warmup_epochs 3 \
+--data_path /project/mmendoscope/CholecT50 \
+--eval_data_path /project/mmendoscope/CholecT50 \
+--nb_classes 100 \
+--data_strategy online \
+--output_mode key_frame \
+--num_frames 16 \
+--sampling_rate 4 \
+--data_set CholecT50C \
+--train_data_fps 1fps \
+--test_data_fps 1fps \
+--output_dir /home/syangcw/PETL4SurgVideo/CholecT50C/LA/ \
+--log_dir /home/syangcw/PETL4SurgVideo/CholecT50C/LA/ \
+--num_workers 10 \
+--dist_eval \
+--no_auto_resume

@@ -1,0 +1,26 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch \
+--nproc_per_node=4 \
+--master_port 12328 \
+downstream_action/run_action_LA.py \
+--batch_size 16 \
+--epochs 30 \
+--save_ckpt_freq 5 \
+--model vit_base_224_aim_timm \
+--pretrained_data wit400m \
+--opt adamw \
+--lr 3e-4 \
+--layer_decay 0.1 \
+--weight_decay 5e-2 \
+--warmup_epochs 3 \
+--data_path /jhcnas4/syangcw/Kinetics-400 \
+--nb_classes 400 \
+--num_frames 8 \
+--sampling_rate 4 \
+--num_sample 1 \
+--data_set Kinetics-400 \
+--output_dir /home/syangcw/PETL4SurgVideo/results_k400 \
+--log_dir /home/syangcw/PETL4SurgVideo/results_k400 \
+--num_workers 10 \
+--dist_eval \
+--test_num_segment 2 \
+--test_num_crop 3 \
