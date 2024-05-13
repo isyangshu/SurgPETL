@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.special import softmax
 import matplotlib.patches as mpatches
 
-path = "/Users/yangshu/Documents/PETL4SurgVideo/result_save/Ours/AutoLaparo/GA/WIT400M/16-4/"
+path = "/Users/yangshu/Documents/SurgPETL/result_save/Ours/AutoLaparo/GA/WIT400M/16-4/"
 txt_name = [str(i) + ".txt" for i in range(2)]
 
 color_dict = {

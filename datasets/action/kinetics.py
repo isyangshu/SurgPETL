@@ -6,7 +6,7 @@ import decord
 from PIL import Image
 from torchvision import transforms
 import sys
-sys.path.append("/home/syangcw/PETL4SurgVideo")
+sys.path.append("/home/syangcw/SurgPETL")
 from datasets.transforms.random_erasing import RandomErasing
 import warnings
 from decord import VideoReader, cpu

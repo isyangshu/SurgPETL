@@ -11,7 +11,7 @@ from collections import OrderedDict
 import torch.nn.functional as F
 import sys
 
-sys.path.append("/Users/yangshu/Documents/PETL4SurgVideo/")
+sys.path.append("/Users/yangshu/Documents/SurgPETL/")
 
 from mixup import Mixup
 from timm.models import create_model
@@ -88,95 +88,95 @@ def get_args():
 def main(args):
     if args.pretrained_data == "imagenet21k":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_augreg_in21k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_augreg_in21k.bin"
             args.qkv_divided = False
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch16_224_augreg_in21k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch16_224_augreg_in21k.bin"
             args.qkv_divided = False
             args.qkv_bias = True
     elif args.pretrained_data == "wit400m_in12k":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_wit400m_ftin12k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_wit400m_ftin12k.bin"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 14:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_wit400m_ftin12k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_wit400m_ftin12k.bin"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
     elif args.pretrained_data == "wit400m":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_wit400m.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_wit400m.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 14:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_wit400m.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_wit400m.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
     elif args.pretrained_data == "laion2b_in12k":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_laion2b_ftin12k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_laion2b_ftin12k.bin"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 14:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_laion2b_ftin12k.bin"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_laion2b_ftin12k.bin"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
     elif args.pretrained_data == "laion400m":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_laion400m.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_laion400m.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 14:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_laion400m.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_laion400m.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
     elif args.pretrained_data == "laion2b":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_laion2b.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_laion2b.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
         elif "large" in args.model and args.patch_size == 14:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_laion2b.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_laion2b.pth"
             args.qkv_divided = False
             args.pre_norm = True
             args.qkv_bias = True
     # 对于视频预训练参数，暂时按照AIM的处理逻辑处理，忽略了temporal_fc，后面择机写一版TimesFormer版本的AIM
     elif args.pretrained_data == "k400":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_k400.pyth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_k400.pyth"
             args.qkv_divided = False
             args.attn_divided = True
             args.qkv_bias = True
     elif args.pretrained_data == "k600":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_k600.pyth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_k600.pyth"
             args.qkv_divided = False
             args.attn_divided = True
             args.qkv_bias = True
     elif args.pretrained_data == "howto100m":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_howto100m.pyth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_howto100m.pyth"
             args.qkv_divided = False
             args.attn_divided = True
             args.qkv_bias = True
     # 手术数据预训练模型
     elif args.pretrained_data == "surgery":
         if "base" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_surgery.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_surgery.pth"
             args.qkv_divided = True
             args.surgery = True
         elif "large" in args.model and args.patch_size == 16:
-            pretrained_path = "/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch16_224_surgery.pth"
+            pretrained_path = "/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch16_224_surgery.pth"
             args.qkv_divided = True
             args.surgery = True
 

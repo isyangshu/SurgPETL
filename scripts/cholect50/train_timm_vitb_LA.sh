@@ -23,8 +23,8 @@ downstream_triplet/run_triplet_finetuning_ours_timm_LA.py \
 --data_set CholecT50C \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/PETL4SurgVideo/CholecT50C/LA/ \
---log_dir /home/syangcw/PETL4SurgVideo/CholecT50C/LA/ \
+--output_dir /home/syangcw/SurgPETL/CholecT50C/LA/ \
+--log_dir /home/syangcw/SurgPETL/CholecT50C/LA/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume

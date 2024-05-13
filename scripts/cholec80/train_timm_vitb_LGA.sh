@@ -29,8 +29,8 @@ downstream_phase/run_phase_finetuning_ours_timm_GLA.py \
 --data_set Cholec80 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /data/caizy/PETL4SurgVideo/Cholec80/PETL/LGA/ \
---log_dir /data/caizy/PETL4SurgVideo/Cholec80/PETL/LGA/ \
+--output_dir /data/caizy/SurgPETL/Cholec80/PETL/LGA/ \
+--log_dir /data/caizy/SurgPETL/Cholec80/PETL/LGA/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume

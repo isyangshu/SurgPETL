@@ -26,8 +26,8 @@ downstream_triplet/run_phase_finetuning_ours_timm_GA.py \
 --data_set CholecT50 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/PETL4SurgVideo/CholecT50/GA/ \
---log_dir /home/syangcw/PETL4SurgVideo/CholecT50/GA/ \
+--output_dir /home/syangcw/SurgPETL/CholecT50/GA/ \
+--log_dir /home/syangcw/SurgPETL/CholecT50/GA/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume

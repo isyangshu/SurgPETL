@@ -29,8 +29,8 @@ downstream_phase/run_phase_finetuning_dualpath_timm.py \
 --data_set Cholec80 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /data/caizy/PETL4SurgVideo/Cholec80/PETL/DUALPATH/ \
---log_dir /data/caizy/PETL4SurgVideo/Cholec80/PETL/DUALPATH/ \
+--output_dir /data/caizy/SurgPETL/Cholec80/PETL/DUALPATH/ \
+--log_dir /data/caizy/SurgPETL/Cholec80/PETL/DUALPATH/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume

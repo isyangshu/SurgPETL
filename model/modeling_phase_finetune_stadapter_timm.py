@@ -768,7 +768,7 @@ if __name__ == "__main__":
 
     args = get_args_finetuning()[0]
     model = vit_base_224_stadapter24x384(
-        pretrain_path="/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_laion2b.pth",
+        pretrain_path="/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_laion2b.pth",
         pre_norm=True,
         qkv_bias=True,
     )

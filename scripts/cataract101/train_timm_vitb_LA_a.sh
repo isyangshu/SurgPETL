@@ -26,8 +26,8 @@ downstream_phase/run_phase_finetuning_ours_timm_LA.py \
 --data_set Cataract101 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/PETL4SurgVideo/Cataract101/PETL/LA/ \
---log_dir /home/syangcw/PETL4SurgVideo/Cataract101/PETL/LA/ \
+--output_dir /home/syangcw/SurgPETL/Cataract101/PETL/LA/ \
+--log_dir /home/syangcw/SurgPETL/Cataract101/PETL/LA/ \
 --num_workers 32 \
 --dist_eval \
 --no_auto_resume

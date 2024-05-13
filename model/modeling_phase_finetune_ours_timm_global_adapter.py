@@ -778,12 +778,12 @@ if __name__ == "__main__":
 
     args = get_args_finetuning()[0]
     model = vit_base_224_aim_timm(
-        pretrain_path="/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_base_patch16_224_wit400m.pth",
+        pretrain_path="/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_base_patch16_224_wit400m.pth",
         pre_norm=True,
         qkv_bias=True,
     )
     # model = vit_large_224_aim_timm(
-    #     pretrain_path="/Users/yangshu/Documents/PETL4SurgVideo/pretrain_params/vit_large_patch14_224_clip.pth",
+    #     pretrain_path="/Users/yangshu/Documents/SurgPETL/pretrain_params/vit_large_patch14_224_clip.pth",
     #     patch_size=14,
     #     pre_norm=True,
     #     qkv_bias=True,

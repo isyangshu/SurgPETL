@@ -26,8 +26,8 @@ downstream_phase/run_phase_finetuning_aim_timm.py \
 --data_set Cholec80 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/PETL4SurgVideo/Cholec80/AIM/ \
---log_dir /data/caizy/PETL4SurgVideo/Cholec80/AIM/ \
+--output_dir /home/syangcw/SurgPETL/Cholec80/AIM/ \
+--log_dir /data/caizy/SurgPETL/Cholec80/AIM/ \
 --num_workers 16 \
 --dist_eval \
 --no_auto_resume

@@ -18,8 +18,8 @@ downstream_action/run_action_GA.py \
 --sampling_rate 4 \
 --num_sample 1 \
 --data_set Kinetics-400 \
---output_dir /home/syangcw/PETL4SurgVideo/results_k400 \
---log_dir /home/syangcw/PETL4SurgVideo/results_k400 \
+--output_dir /home/syangcw/SurgPETL/results_k400 \
+--log_dir /home/syangcw/SurgPETL/results_k400 \
 --num_workers 10 \
 --dist_eval \
 --test_num_segment 2 \

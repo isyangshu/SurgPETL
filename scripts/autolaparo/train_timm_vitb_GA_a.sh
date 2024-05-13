@@ -26,8 +26,8 @@ downstream_phase/run_phase_finetuning_ours_timm_GA.py \
 --data_set AutoLaparo \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/PETL4SurgVideo/AutoLaparo/PETL/GA/ \
---log_dir /home/syangcw/PETL4SurgVideo/AutoLaparo/PETL/GA/ \
+--output_dir /home/syangcw/SurgPETL/AutoLaparo/PETL/GA/ \
+--log_dir /home/syangcw/SurgPETL/AutoLaparo/PETL/GA/ \
 --num_workers 32 \
 --dist_eval \
 --no_auto_resume

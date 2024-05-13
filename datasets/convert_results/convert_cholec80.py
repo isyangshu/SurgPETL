@@ -18,11 +18,11 @@ def create_folder_if_not_exists(folder_path):
         print("文件夹已存在：", folder_path)
 
 
-main_path = "/Users/yangshu/Documents/PETL4SurgVideo/result_save/Dualpath/Large/"
+main_path = "/Users/yangshu/Documents/SurgPETL/result_save/Dualpath/Large/"
 file_path_0 = os.path.join(main_path, "0.txt")
 file_path_1 = os.path.join(main_path, "1.txt")
-anns_path = "/Users/yangshu/Documents/PETL4SurgVideo/result_save/Dualpath/Large" + "/phase_annotations"
-pred_path = "/Users/yangshu/Documents/PETL4SurgVideo/result_save/Dualpath/Large" + "/prediction"
+anns_path = "/Users/yangshu/Documents/SurgPETL/result_save/Dualpath/Large" + "/phase_annotations"
+pred_path = "/Users/yangshu/Documents/SurgPETL/result_save/Dualpath/Large" + "/prediction"
 
 
 create_folder_if_not_exists(anns_path)
