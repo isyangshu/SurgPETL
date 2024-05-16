@@ -857,7 +857,9 @@ def main(args, ds_init):
                     model_ema=None,
                 )
         if data_loader_val is not None:
-            test_stats = validation_one_epoch(data_loader_val, model, device)
+            # test_stats = validation_one_epoch(data_loader_test, model, device)
+            preds_file = os.path.join(args.output_dir, str(global_rank) + ".txt")
+            test_stats = validation_one_epoch(data_loader_val, model, device, preds_file, num_tasks)
             print(
                 f"mAP of the network on the {len(dataset_test)} val videos: {test_stats['mAP']:.2f}%"
             )

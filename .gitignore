@@ -8,3 +8,6 @@ model/__pycache__
 downstream_phase/__pycache__
 downstream_triplet/__pycache__
 datasets/__pycache__
+*.out
+*.err
+*.slurm

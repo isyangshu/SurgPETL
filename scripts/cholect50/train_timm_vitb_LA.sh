@@ -20,11 +20,11 @@ downstream_triplet/run_triplet_finetuning_ours_timm_LA.py \
 --output_mode key_frame \
 --num_frames 16 \
 --sampling_rate 4 \
---data_set CholecT50C \
+--data_set CholecT50 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/SurgPETL/CholecT50C/LA/ \
---log_dir /home/syangcw/SurgPETL/CholecT50C/LA/ \
+--output_dir /home/syangcw/SurgPETL/results/CholecT50/LA/ \
+--log_dir /home/syangcw/SurgPETL/results/CholecT50/LA/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume

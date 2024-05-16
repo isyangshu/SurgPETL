@@ -1,16 +1,13 @@
 CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
 --nproc_per_node=2 \
 --master_port 12358 \
-downstream_triplet/run_phase_finetuning_ours_timm_GLA.py \
+downstream_triplet/run_triplet_finetuning_ours_timm_GLA.py \
 --batch_size 32 \
 --epochs 30 \
 --save_ckpt_freq 5 \
 --model vit_base_224_aim_timm \
 --pretrained_data wit400m \
 --patch_size 16 \
---mixup 0.8 \
---cutmix 1.0 \
---smoothing 0.1 \
 --opt adamw \
 --lr 3e-4 \
 --layer_decay 0.1 \
@@ -26,8 +23,8 @@ downstream_triplet/run_phase_finetuning_ours_timm_GLA.py \
 --data_set CholecT50 \
 --train_data_fps 1fps \
 --test_data_fps 1fps \
---output_dir /home/syangcw/SurgPETL/CholecT50/GLA/ \
---log_dir /home/syangcw/SurgPETL/CholecT50/GLA/ \
+--output_dir /home/syangcw/SurgPETL/results/CholecT50/GLA/ \
+--log_dir /home/syangcw/SurgPETL/results/CholecT50/GLA/ \
 --num_workers 10 \
 --dist_eval \
 --no_auto_resume
