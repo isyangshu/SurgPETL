@@ -9,6 +9,7 @@ downstream_action/run_action_AIM.py \
 --pretrained_data wit400m \
 --opt adamw \
 --lr 3e-4 \
+--drop_path 0.2 \
 --layer_decay 0.1 \
 --weight_decay 5e-2 \
 --warmup_epochs 3 \
@@ -22,5 +23,5 @@ downstream_action/run_action_AIM.py \
 --log_dir /home/syangcw/SurgPETL/results_k400 \
 --num_workers 10 \
 --dist_eval \
---test_num_segment 2 \
---test_num_crop 3 \
+--test_num_segment 3 \
+--test_num_crop 1 \

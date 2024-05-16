@@ -26,5 +26,4 @@ downstream_triplet/run_triplet_finetuning_ours_timm_GA.py \
 --output_dir /home/syangcw/SurgPETL/results/CholecT50/GA/ \
 --log_dir /home/syangcw/SurgPETL/results/CholecT50/GA/ \
 --num_workers 10 \
---dist_eval \
---no_auto_resume
+--dist_eval

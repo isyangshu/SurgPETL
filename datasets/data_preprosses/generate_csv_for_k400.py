@@ -3,14 +3,15 @@ import shutil
 import csv
 
 # CSV文件路径
-csv_file = "/home/syangcw/adapt-image-models/data/kinetics400/annotations/kinetics_val.csv"
+csv_file_1 = "/home/syangcw/mmaction2/data/kinetics400/annotations/kinetics_train.csv"
+csv_file_2 = "/home/syangcw/mmaction2/data/kinetics400/annotations/kinetics_test.csv"
 
 # 目标子文件夹路径
-destination_csv = "/jhcnas4/syangcw/Kinetics-400/val.csv"
-video_folder = "/jhcnas4/syangcw/Kinetics-400/videos_val"
+destination_csv = "/jhcnas4/syangcw/Kinetics-400/train.csv"
+video_folder = "/jhcnas4/syangcw/Kinetics-400/videos_train"
 print(len(os.listdir(video_folder)))
 categoris = set()
-with open(csv_file, 'r') as file:
+with open(csv_file_1, 'r') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)  # 跳过CSV文件的标题行
     for row in csv_reader:
@@ -28,7 +29,7 @@ print(cat_dict)
 data_list = []
 
 count_remove = 0
-with open(csv_file, 'r') as file:
+with open(csv_file_1, 'r') as file:
     csv_reader = csv.reader(file)
     next(csv_reader)  # 跳过CSV文件的标题行
     for row in csv_reader:
@@ -40,6 +41,20 @@ with open(csv_file, 'r') as file:
         else:
             count_remove += 1
 print(count_remove)
+print(len(data_list))
+with open(csv_file_2, 'r') as file:
+    csv_reader = csv.reader(file)
+    next(csv_reader)  # 跳过CSV文件的标题行
+    for row in csv_reader:
+        video_name = row[1]  # 视频文件名
+        category = row[0]  # 视频对应的类别
+        video_path = os.path.join(video_folder, video_name+'.mp4')
+        if os.path.exists(video_path):
+            data_list.append([video_path, cat_dict[category]])
+        else:
+            count_remove += 1
+print(count_remove)
+print(len(data_list))
 with open(destination_csv, mode='w', newline='') as file:
     writer = csv.writer(file, delimiter=' ')
 
