@@ -165,25 +165,28 @@ class VideoClsDataset(Dataset):
         args,
     ):
 
-        aug_transform = video_transforms.create_random_augment(
-            input_size=(self.crop_size, self.crop_size),
-            auto_augment=args.aa,
-            interpolation=args.train_interpolation,
-        )
+        # aug_transform = video_transforms.create_random_augment(
+        #     input_size=(self.crop_size, self.crop_size),
+        #     auto_augment=args.aa,
+        #     interpolation=args.train_interpolation,
+        # )
 
         buffer = [
             transforms.ToPILImage()(frame) for frame in buffer
         ]
 
-        buffer = aug_transform(buffer)
+        # buffer = aug_transform(buffer)
 
         buffer = [transforms.ToTensor()(img) for img in buffer]
         buffer = torch.stack(buffer) # T C H W
         buffer = buffer.permute(0, 2, 3, 1) # T H W C 
         
         # T H W C 
+        # buffer = tensor_normalize(
+        #     buffer, [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]
+        # )
         buffer = tensor_normalize(
-            buffer, [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]
+            buffer, [122.769/255., 116.74/255., 104.04/255.], [68.493/255., 66.63/255., 70.321/255.]
         )
         # T H W C -> C T H W.
         buffer = buffer.permute(3, 0, 1, 2)

@@ -15,13 +15,13 @@ downstream_action/run_action_AIM.py \
 --warmup_epochs 3 \
 --data_path /jhcnas4/syangcw/Kinetics-400 \
 --nb_classes 400 \
---num_frames 8 \
+--num_frames 16 \
 --sampling_rate 4 \
---num_sample 1 \
+--num_sample 2 \
 --data_set Kinetics-400 \
 --output_dir /home/syangcw/SurgPETL/results_k400 \
 --log_dir /home/syangcw/SurgPETL/results_k400 \
 --num_workers 10 \
 --dist_eval \
---test_num_segment 3 \
---test_num_crop 1 \
+--test_num_segment 5 \
+--test_num_crop 3 \
